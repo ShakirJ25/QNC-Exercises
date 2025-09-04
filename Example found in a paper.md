@@ -1,0 +1,5 @@
+# Probability-Distributions-I
+Example of a sampling distribution in a paper:
+Select microbial metabolites in the small intestinal lumen regulate vagal activity via receptor-mediated signaling (Jameson et al, Cell Press 2024) https://pmc.ncbi.nlm.nih.gov/articles/PMC11772968/#sec8
+This paper uses in vivo calcium imaging to look at the elicited responses of vagal afferent neurons after small intestinal perfusion of microbiome dependent metabolites in mice. They found that infusion of SCFAs causes calcium responses in 48% of the 86 cells responsive to electrical stimuli. In this case, they looked at total excitable neurons as their measurable property and then tested those neurons under the condition of luminal perfusion of SCFAs and other metabolites. This tests the relationship between the different response properties based on random sample-based statistics. 
+In this example, to describe one neuron, a bernoulli distribution could be used. To describe all 86 neurons that were responsive to electrical stimuli, a binomial distribution could be used. 
