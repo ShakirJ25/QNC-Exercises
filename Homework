@@ -1,0 +1,31 @@
+import numpy as np
+from scipy.stats import bernoulli, binom
+
+# Experimental data
+n_cells = 86
+p_response = 0.48   # estimated probability of response
+
+# Bernoulli distribution to describe a single neuron
+bern = bernoulli(p_response)
+
+print("Probability a single neuron responds:", bern.pmf(1))
+print("Probability a single neuron does not respond:", bern.pmf(0))
+
+# Binomial distribution to describe all 86 neurons
+binom_dist = binom(n=n_cells, p=p_response)
+
+# Example: probability exactly 41 neurons respond
+print("P(41 responses):", binom_dist.pmf(41))
+
+# Expected mean & variance
+print("Expected number of responses:", binom_dist.mean())
+print("Variance:", binom_dist.var())
+
+# Simulations 
+# Simulate 10 experiments of 86 neurons each
+simulated_experiments = binom_dist.rvs(size=10)
+print("Simulated experiments:", simulated_experiments)
+
+# Simulate 86 single-neuron responses (Bernoulli trials)
+simulated_cells = bern.rvs(size=n_cells)
+print("Simulated individual cells:", simulated_cells)
