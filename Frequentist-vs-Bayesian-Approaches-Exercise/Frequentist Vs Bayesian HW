@@ -1,0 +1,17 @@
+#Positive test is not statistically significant because p = 0.05 with a sample size of 1
+probability_false_positive = 0.05
+N = 1000
+expected_false_positives = (0.05*1000)
+print(expected_false_positives)
+N_exercise = 1
+expected_false_positive_exercise = (0.05*1)
+print(expected_false_positive_exercise)
+#Probability that individual with positive test is actually infected
+#Likelihood is P(Positive|Infected)
+likelihood = 1
+#Plug in a number from range of priors
+prior = 0.5
+#Marginal probability of data is P(Positive)
+marginal_probability_data = (prior + 0.05*(1 - prior))
+posterior_probability = (likelihood*prior)/marginal_probability_data
+print (posterior_probability)
